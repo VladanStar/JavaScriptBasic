@@ -20,7 +20,13 @@ const people = [
       position: 'intern',
     },
   ];
+
+const getAges =(person)=>{
+  person.age*2
+}
+console.log(getAges)
+
   const ages = people.map((person)=>{
-return person.age
+return person.age*2;
   })
   console.log(ages)
