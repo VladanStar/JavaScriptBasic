@@ -33,6 +33,8 @@ const getAges =(person)=>{
 }
 console.log(getAges)
 
+
+
   const ages = people.map((person)=>{
 return person.age*2;
   })
