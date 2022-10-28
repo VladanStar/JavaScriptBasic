@@ -27,4 +27,5 @@ function updateState(key, value){
     state[key] = value
 }
 updateState("name","john");
+updateState("job","developer");
 console.log(state)
