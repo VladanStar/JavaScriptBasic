@@ -16,3 +16,4 @@ const app = {
     [appState]:true
 }
 console.log(app)
+console.log(typeof null)
