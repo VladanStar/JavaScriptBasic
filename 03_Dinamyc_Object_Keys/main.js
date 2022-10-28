@@ -16,4 +16,15 @@ const app = {
     [appState]:true
 }
 console.log(app)
-console.log(typeof null)
+console.log(typeof null);
+const state = {
+    loading:true,
+    name:"",
+    job:""
+}
+
+function updateState(key, value){
+    state[key] = value
+}
+updateState("name","john");
+console.log(state)
