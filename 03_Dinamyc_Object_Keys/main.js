@@ -28,4 +28,5 @@ function updateState(key, value){
 }
 updateState("name","john");
 updateState("job","developer");
+updateState("products",[])
 console.log(state)
