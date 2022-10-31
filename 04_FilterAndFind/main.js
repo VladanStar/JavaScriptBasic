@@ -23,6 +23,8 @@ const youngPeople = people.filter((person) => {
 console.log(youngPeople)
 
 const developers = people.filter((person) => {
-    person.position === "developer"
+    if (person.position === "developer") {
+        return person;
+  }
 })
 console.log(developers);
