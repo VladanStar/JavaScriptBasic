@@ -30,6 +30,8 @@ const staff = [
       salary: 1100,
   },
 ];
-const dailytotal = staff.reduce(() => {
-    
-},0)
+const dailytotal = staff.reduce((total, person) => {
+    total += person.salary;
+    return total
+}, 0)
+console.log(dailytotal)
