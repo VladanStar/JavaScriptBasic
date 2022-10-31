@@ -28,3 +28,6 @@ const developers = people.filter((person) => {
   }
 })
 console.log(developers);
+
+const peter = people.filter((person) => person.name === "Peter")
+console.log(peter)
