@@ -29,7 +29,8 @@ let total = cart.reduce(
   (total, cartItem) => {
     const {amount,price}= cartItem;
     total.totalItems +=amount;
-    total.cartTotal +=amount*price;
+    total.cartItem +=amount*price;
+
     return total;
   },
   {
