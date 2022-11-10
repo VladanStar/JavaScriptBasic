@@ -27,7 +27,9 @@ const cart = [
 
 let total = cart.reduce(
   (total, cartItem) => {
-    console.log(amout,price)= cartItem;
+    const {amout,price}= cartItem;
+    total.totalItems +=amount;
+    total.cartTotal +=amount*price;
     return total;
   },
   {
@@ -35,4 +37,6 @@ let total = cart.reduce(
     cartItem: 0,
   }
 );
+
+console.log(total)
 const url = "https://api.github.com/users/john-smigla/repos?per_page=100";
