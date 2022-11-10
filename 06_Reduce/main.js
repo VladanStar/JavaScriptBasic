@@ -41,3 +41,10 @@ let total = cart.reduce(
 
 console.log(total)
 const url = "https://api.github.com/users/john-smigla/repos?per_page=100";
+
+const fetchRepos = async () =>{
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+}
+fetchRepos();
