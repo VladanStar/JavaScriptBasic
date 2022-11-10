@@ -46,5 +46,18 @@ const fetchRepos = async () =>{
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
+    const newData = data.reduce((total,repo)=>{
+        const{language} = repo;
+
+        if(total[language]){
+            total[language] = total[language] +1;
+        }
+        else {
+            total[language] =1;
+        }
+        return total
+       
+    },{})
+    console.log(newData)
 }
 fetchRepos();
