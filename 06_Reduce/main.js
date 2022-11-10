@@ -1,5 +1,16 @@
 
+//Reduce -objects
 
+//cart example
+
+let total = cart.reduce(
+    (total,cartItem)=>{
+        console.log(cart)
+    return total;
+},{
+    totalItems:0,
+    cartItem:0
+})
 const cart =[
     {
         title:'Samsung Galaxy S7',
