@@ -1,12 +1,13 @@
 fetch(
-  "https://services.odata.org/V3/Northwind/Northwind.svc/Customers"
+  "https://fakestoreapi.com/products"
 ).then((data) => {
     return data.json()
-}). then((objectData)=>{
+}).then((objectData)=>{
     console.log(objectData[0].title)
     let tableData=""
     objectData.map((values)=>{
-        tableData =<h1>${values.title}</h1>
+        tableData =`<h1>${values.OrderID}</h1>`
+        document.getElementById('table_body').innerHTML = tableData;
     })
 })
 
