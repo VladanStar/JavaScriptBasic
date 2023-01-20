@@ -6,7 +6,13 @@ fetch(
     console.log(objectData[0].title)
     let tableData=""
     objectData.map((values)=>{
-        tableData =`<h1>${values.OrderID}</h1>`
+        tableData +=`
+        <tr>
+        <td>${values.title}</td>
+        <td>${values.description}</td>
+        <td>${values.price}</td>
+        <td>${values.image}</td>
+      </tr>`
         document.getElementById('table_body').innerHTML = tableData;
     })
 })
