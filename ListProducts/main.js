@@ -1,17 +1,18 @@
 fetch(
-  "https://fakestoreapi.com/products"
+  "https://northwind.vercel.app/api/products/"
 ).then((data) => {
     return data.json()
 }).then((objectData)=>{
-    console.log(objectData[0].title)
+    console.log(objectData[0].name)
     let tableData=""
     objectData.map((values)=>{
         tableData +=`
         <tr>
-        <td>${values.title}</td>
-        <td>${values.description}</td>
-        <td>${values.price}</td>
-        <td>${values.image}</td>
+        <td>${values.name}</td>
+        <td>${values.id}</td>
+        <td>${values.unitPrice}</td>
+        <td>${values.quantityPerUnit}</td>
+       
       </tr>`
         document.getElementById('table_body').innerHTML = tableData;
     })
