@@ -78,3 +78,9 @@ img {
     object-fit: contain;
     height: 15em;
 }
+.hide {
+    display: none;
+}
+.active {
+    display: inline;
+}
