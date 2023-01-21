@@ -44,4 +44,8 @@
     background: #55007c;
     border-color: #55007c;
   }
-  
+   
+  #map{
+    width: 450px;
+    height: 400px;
+}
