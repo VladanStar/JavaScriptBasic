@@ -8,7 +8,6 @@ fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Products/")
       html += `
               <div class="col-3 product-container">
                   <div class="card product">
-                    
                       <div class="card-body">
                       <img
                       src="${"https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg"}"
@@ -17,8 +16,12 @@ fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Products/")
                      />
                      <h5c lass="card-title">${product.ProductName}</h5>
                           <p class="card-title"> id: ${product.ProductID}</p >
-                          <p class="card-text"> quantity:${product.QuantityPerUnit} </p>
-                          <p class="card-text"> id category: ${product.CategoryID} </p>
+                          <p class="card-text"> quantity:${
+                            product.QuantityPerUnit
+                          } </p>
+                          <p class="card-text"> id category: ${
+                            product.CategoryID
+                          } </p>
                           <button type="button" class="btn btn-primary btn-cart" onClick="addProductCart(${
                             product.ProductID
                           })">Add to Cart</button>
@@ -48,7 +51,7 @@ function filterProduct(value) {
     }
   });
   // select all card
-  let elements = document.querySelectorAll(".product-container");
+  let elements = document.querySelectorAll(".card-body");
   //   elements.map((element) => {
   //     if (value == "all") {
   //       element.classList.remove("hide");
@@ -72,6 +75,14 @@ function filterProduct(value) {
     }
   });
 }
+
+document.getElementById("search").addEventListener("click", () => {
+  let searchInput = document.getElementById("search-input").value;
+  let elements = document.querySelectorAll(".product-name");
+  let cards = document.querySelectorAll(".card");
+  console.log(searchInput);
+});
+
 window.onload = () => {
   filterProduct("all");
 };
