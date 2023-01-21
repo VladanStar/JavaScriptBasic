@@ -32,29 +32,49 @@
       document.getElementsByClassName("products")[0].innerHTML = html;
     });
 
-function ffilterProduct(value) {
+function filterProduct(value) {
   let buttons = document.querySelectorAll(".button-value");
-  buttons.map((button) => {
-    if (value.toUpperCase() == button.innerText.toUpperCase()) {
-      button.classList.add("active");
-    } else {
-      button.classList.remove("active");
+//   buttons.map((button) => {
+//     if (value.toUpperCase() == button.innerText.toUpperCase()) {
+//       button.classList.add("active");
+//     } else {
+//       button.classList.remove("active");
+//     }
+//   });
+buttons.forEach((button)=>{
+    if(value.toUpperCase() == button.innerText.toUpperCase()){
+        button.classList.add("active");
     }
-  });
-
+    else{
+        button.classList.remove("active")
+    }
+})
   // select all card
-  let elements = document.querySelectorAll(".product-container");
-  elements.map((element) => {
-    if (value == "all") {
-      element.classList.remove("hide");
-    } else {
-      if (element.classList.contains(value)) {
+  let elements = document.querySelectorAll(".card");
+//   elements.map((element) => {
+//     if (value == "all") {
+//       element.classList.remove("hide");
+//     } else {
+//       if (element.classList.contains(value)) {
+//         element.classList.remove("hide");
+//       } else {
+//         element.classList.add("hide");
+//       }
+//     }
+//   });
+elements.forEach((element)=>{
+    if(value == "all"){
         element.classList.remove("hide");
-      } else {
-        element.classList.add("hide");
-      }
     }
-  });
+    else{
+        if (element.classList.contains(value)) {
+                  element.classList.remove("hide");
+                 } else {
+                   element.classList.add("hide");
+             }
+       
+    }
+})
 }
 window.onload = () => {
     filterProduct("all");

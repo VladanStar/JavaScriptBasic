@@ -82,5 +82,6 @@ img {
     display: none;
 }
 .active {
-    display: inline;
+  background-color: #6767ff;
+  color: #ffffff;
 }
