@@ -8,17 +8,17 @@ fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Products/")
       html += `
               <div class="col-3 product-container">
                   <div class="card product">
-                      <img
-                       src="${"https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg"}"
-                      class="card-img-top"
-                      alt="${product.ProductName}"
-                      />
+                    
                       <div class="card-body">
-                          <h5 class="card-title">${product.ProductID}</h5>
-                          <p class="card-text">${product.QuantityPerUnit}</p>
-                          <p class="card-text">${
-                            product.CategoryID
-                          } $ / Unidad</p>
+                      <img
+                      src="${"https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg"}"
+                     class="card-img-top"
+                     alt="${product.ProductName}"
+                     />
+                     <h5c lass="card-title">${product.ProductName}</h5>
+                          <p class="card-title"> id: ${product.ProductID}</p >
+                          <p class="card-text"> quantity:${product.QuantityPerUnit} </p>
+                          <p class="card-text"> id category: ${product.CategoryID} </p>
                           <button type="button" class="btn btn-primary btn-cart" onClick="addProductCart(${
                             product.ProductID
                           })">Add to Cart</button>
@@ -48,7 +48,7 @@ function filterProduct(value) {
     }
   });
   // select all card
-  let elements = document.querySelectorAll(".card");
+  let elements = document.querySelectorAll(".product-container");
   //   elements.map((element) => {
   //     if (value == "all") {
   //       element.classList.remove("hide");
@@ -67,7 +67,7 @@ function filterProduct(value) {
       if (element.classList.contains(value)) {
         element.classList.remove("hide");
       } else {
-        element.classList.add("hide");
+        element.classList.add("active");
       }
     }
   });
