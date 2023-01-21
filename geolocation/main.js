@@ -14,18 +14,21 @@ function show() {
 
       var longitude = data.location.lng;
       var latitude = data.location.lat;
-      var link = "http://maps.google.com/?q=" + latitude + "," + longitude;
-      // var link = "https://nominatim.openstreetmap.org/reverse?format=json&lat="+latitude+"&lon="+longitude;
+      //  var link = "http://maps.google.com/?q=" + latitude + "," + longitude;
+      var link =
+        "https://nominatim.openstreetmap.org/reverse?format=json&lat=" +
+        latitude +
+        "&lon=" +
+        longitude;
       // var link = "http://maps.google.com/?q=" + latitude + "," + longitude;
-     // var link =
-     //   "https://nominatim.openstreetmap.org/reverse?format=json&lat=" +
-     //   latitude +
-     //   "&lon=" +
-     //   longitude;
-     document.getElementById("map").outerHTML = link;
+      // var link =
+      //   "https://nominatim.openstreetmap.org/reverse?format=json&lat=" +
+      //   latitude +
+      //   "&lon=" +
+      //   longitude;
+      //  document.getElementById("map").outerHTML = link;
       //document.getElementById("map").innerHTML = link;
 
-      
-   // document.getElementById("map").innerHTML = link;
+       document.getElementById("map").innerHTML = link;
     });
 }
