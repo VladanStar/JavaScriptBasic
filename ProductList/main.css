@@ -1,0 +1,57 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+}
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+#search-container {
+    margin:1em 0;
+}
+#search-container input {
+    background-color: transparent;
+    width: 40%;
+    border-bottom: 2px solid darkblue;
+    padding: 1em 0.3em;
+}
+#search-container input:focus {
+    border-bottom-color:violet;
+}
+#search-container input {
+    border-bottom-color: darkblue;
+}
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: violet;
+    color:whitesmoke;
+    border-radius: 5px;
+    margin-top: 0.5em;
+}
+.button-value{
+    background-color:transparent;
+    border: 2px solid darkblue;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    color: #676767;
+    cursor: pointer;
+}
+.active {
+    background-color: #6767ff;
+    color: #ffffff;
+}
+.products {
+    
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 1 1 1 30%;
+    flex-wrap: wrap;
+}
+.btn-cart {
+    width: 150px;
+}
