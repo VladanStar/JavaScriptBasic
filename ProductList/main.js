@@ -67,7 +67,7 @@ function filterProduct(value) {
       if (element.classList.contains(value)) {
         element.classList.remove("hide");
       } else {
-        element.classList.add("active");
+        element.classList.add("hide");
       }
     }
   });
