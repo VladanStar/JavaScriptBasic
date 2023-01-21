@@ -30,3 +30,17 @@ fetch('https://services.odata.org/v4/Northwind/Northwind.svc/Products/')
     document.getElementsByClassName("products")[0].innerHTML = html;
 })
 }
+window.onload =()=>{
+    filterProduct("all");
+}
+function filterFroduct(value) {
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.map((button) =>{
+        if(value.toUpperCase() == button.innerText.toUpperCase()){
+        button.classList.add("active");
+        }
+        else {
+            button.classList.remove("active");
+        }
+    })
+}
