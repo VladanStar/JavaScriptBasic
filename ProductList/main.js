@@ -51,7 +51,7 @@ function filterProduct(value) {
     }
   });
   // select all card
-  let elements = document.querySelectorAll(".card-body");
+  let elements = document.querySelectorAll(".product");
   //   elements.map((element) => {
   //     if (value == "all") {
   //       element.classList.remove("hide");
@@ -78,9 +78,18 @@ function filterProduct(value) {
 
 document.getElementById("search").addEventListener("click", () => {
   let searchInput = document.getElementById("search-input").value;
-  let elements = document.querySelectorAll(".product-name");
-  let cards = document.querySelectorAll(".card");
+  let elements = document.querySelectorAll(".card-title");
+  let cards = document.querySelectorAll(".product-container");
   console.log(searchInput);
+
+  elements.forEach((element, index)=>{
+    if(element.innerText.includes(searchInput.toUpperCase())){
+        cards[index].classList.add("active")
+    }
+    else {
+        cards[index].classList.add("hide")
+    }
+  })
 });
 
 window.onload = () => {
