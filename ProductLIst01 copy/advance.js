@@ -1,4 +1,4 @@
-fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Products/")
+fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data.value);
@@ -10,7 +10,7 @@ function searchDate(value){
     console.log(value)
       var myDataTable = $('#staff').DataTable({
         sDom: 't',
-        data: myTableData,
+        data: value,
         columns: [{
             title: 'Name',
             data: 'name'
