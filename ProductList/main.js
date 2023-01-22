@@ -79,7 +79,7 @@ function filterProduct(value) {
 document.getElementById("search").addEventListener("click", () => {
   let searchInput = document.getElementById("search-input").value;
   let elements = document.querySelectorAll(".card-title");
-  let cards = document.querySelectorAll(".product-container");
+  let cards = document.querySelectorAll(".card-body");
   console.log(searchInput);
 
   elements.forEach((element, index)=>{
