@@ -84,4 +84,5 @@ img {
 .active {
   background-color: #6767ff;
   color: #ffffff;
+  display: inline-block;
 }
