@@ -1,0 +1,98 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>ListProduct Northwind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="ess_style.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script type="text/javascript" src="jquery-latest.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    </head>
+
+    <body>
+        <div id="esstable">
+            <input type="text" id="searchess" placeholder="ESS Date Search" style="float:left; margin:10; vertical-align:top"></input>
+            <table border="1" id="table_side2">
+                <tbody>
+                    <tr>
+                        <th>Date</th>
+                        <th>ESS File</th>
+                    </tr>
+                    <tr>
+                        <td>3/17/2014 </td>
+                        <td> <a href="./file1.html"> file 1 </a> </td>
+                    </tr>
+                    <tr>
+                        <td>3/22/2014 </td>
+                        <td> <a href="./file2.html"> file 2 </a> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script>
+            //datepicker
+            $(function () {
+                $("#searchess").datepicker({
+                    dateFormat: "m/dd/yy",
+                    onSelect: function () {
+                        $("#searchess").trigger('keyup')
+                    }
+                });
+            });
+
+            //search textbox
+            $("#searchess").keyup(function() {
+                if(typeof String.prototype.trim !== 'function') {
+                    String.prototype.trim = function() {
+                        return this.replace(/^\s+|\s+$/g, ''); 
+                    }
+                }
+
+                var value = this.value.trim();
+
+                $("#esstable").find("tr").each(function(index) {
+                    if (!index) return;
+                    var id = $(this).find("td").first().text().trim();
+                    $(this).toggle(id.indexOf(value) !== -1);
+                });
+            });
+
+            //script to populate table
+            $.getScript('index.js');
+            $("#searchess").keyup(function() {
+    if(typeof String.prototype.trim !== 'function') {
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g, ''); 
+        }
+    }
+
+    var value = this.value.trim();
+
+    $("#esstable").find("tr").each(function(index) {
+        if (!index) return;
+        var id = $(this).find("td").first().text().trim();
+        $(this).toggle(id.indexOf(value) !== -1);
+    });
+
+    //At this point the search is complete...
+    //See if there is one option:
+    if ($("#esstable tr:visible").length == 2) { 
+        //get the url of the link
+        var url = $("#esstable tr:visible td a").attr("href");
+
+        //go to the link
+        window.location.href = url;
+    }
+});
+
+        </script>
+
+    </body>
+
+</html>

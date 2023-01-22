@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ListProduct Northwind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    
+  </head>
+  <body>
+    <div class="container mx-auto">
+      <h1 class="font-poppins text-center text-3xl font-bold py-20">
+        Filter Products
+      </h1>
+      <div class="text-center py-4">
+      <label>Start date:</label>
+      <input id="startdate" class="date_range_filter" placeholder="date"  type="date"/>
+      <label>End date:</label>
+      <input id="enddate" class="date_range_filter" placeholder="date"  type="date"/>
+      <table id="staff"></table>
+    </div>
+
+
+      <form action="#" class="text-center py-4">
+        <input
+          type="text"
+          class="placeholder-gray-800 focus:outline-none rounded-md font-poppins py-2 px-3 bg-gray-200 text-gray-800 w-2/4"
+          id="filterInput"
+          placeholder="Filter"
+        />
+        <div
+          class="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-12 gap-20"
+        >
+          <!-- <div class="item justify-self-center "> -->
+          
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
+    <script src="advance.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </body>
+</html>
