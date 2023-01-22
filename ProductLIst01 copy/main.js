@@ -46,8 +46,8 @@ function addElement(appendIn, value) {
         <h3 class="text-lg title name"> Name: ${name}</h3>
         <h3 class="text-lg"> CustomerID${value.CustomerID}</h3>
         <a href="$" class="block"><span class="text-sm text-red-400"> Order ID: ${value.OrderID}</span></a>
-        <span class="block py-3"><span class="text-md"> ShippedDate:${value.ShippedDate}</span></span>
-        <span class="block py-3"> <span class="text-md"> RequiredDate: ${value.RequiredDate}</span></span>
+        <span class="block py-3"><span class="text-md"> ShippedDate:${value.OrderDate}</span></span>
+        <span class="block py-3"> <span class="text-md"> RequiredDate: ${value.ShippedDate}</span></span>
         <button class="border-2 px-8 py-1 bg-yellow-400 border rounded-md">Bay Now</button>
     </div>
     `;

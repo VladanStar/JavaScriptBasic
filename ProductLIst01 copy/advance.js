@@ -6,26 +6,26 @@ fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
      searchDate(data.value);
     
   });
-function searchDate(value){
-    console.log(value)
+function searchDate(row){
+    console.log(row)
       var myDataTable = $('#staff').DataTable({
         sDom: 't',
-        data: value,
+        data: row,
         columns: [{
             title: 'Name',
-            data: 'name'
+            data: 'CustomerID'
           },
           {
             title: 'Position',
             data: 'position'
           },
           {
-            title: 'Office',
-            data: 'office'
+            title: 'Office date',
+            data: 'OrderDate'
           },
           {
-            title: 'Hire date',
-            data: 'start_date'
+            title: 'Order date',
+            data: 'OrderDate'
           },
           {
             title: 'Salary',
