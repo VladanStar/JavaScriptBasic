@@ -39,13 +39,10 @@ $(function () {
             return dataA.OrderDate > startDate && dataA.OrderDate < endDate;
           });
           console.log(filteredDates);
-          for( let i=0; i<filteredDates.length; i++){
-          let name = filteredDates[i].CustomerID;
-          console.log(name);
-          filteredDates[i].display = "none";
-          
+          for (let i = 0; i < filteredDates.length; i++) {
+            let name = filteredDates[i].CustomerID;
+            console.log(name);
           }
-     
         }
 
         $('input[name="datefilter"]').on(
