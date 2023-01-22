@@ -6,83 +6,78 @@
 //      searchDate(data.value);
 
 //   });
-import { value } from "./db.js";
-let row = value;
-console.log(row);
+// import { value } from "./db.js";
+// let row = value;
+// console.log(row);
 
-console.log(row);
-var myDataTable = $("#staff").DataTable({
-  sDom: "t",
-  data: row,
-  columns: [
-    {
-      title: "CustomerID",
-      data: "CustomerID",
+// console.log(row);
+$(function () {
+  $('input[name="datefilter"]').daterangepicker({
+    showDropdowns: true,
+    autoUpdateInput: false,
+    locale: {
+      cancelLabel: "Clear",
     },
-    {
-      title: "ShippedDate",
-      data: "ShippedDate",
-    },
-    {
-      title: "OrderDate",
-      data: "OrderDate",
-    },
-    {
-      title: "Freight",
-      data: "Freight",
-    },
-  ],
-});
-
-// I instantiate the two datepickers here, instead of all at once like before.
-// I also changed the dateFormat to match the format of the dates in the data table.
-$("#startdate")
-  .datepicker({
-    dateFormat: "yy/mm/dd",
-    onSelect: function (date) {
-      // This handler kicks off the filtering.
-      minDateFilter = new Date(date).getTime();
-      myDataTable.draw(); // Redraw the table with the filtered data.
-    },
-  })
-  .keyup(function () {
-    minDateFilter = new Date(this.value).getTime();
-    myDataTable.draw();
   });
 
-$("#enddate")
-  .datepicker({
-    dateFormat: "yy/mm/dd",
-    onSelect: function (date) {
-      maxDateFilter = new Date(date).getTime();
-      myDataTable.draw();
-    },
-  })
-  .keyup(function () {
-    maxDateFilter = new Date(this.value).getTime();
-    myDataTable.draw();
-  });
+  $('input[name="datefilter"]').on(
+    "apply.daterangepicker",
+    function (ev, picker) {
+      $(this).val(
+        // 1996-07-04
+        picker.startDate.format("YYYY-MM-DD") +
+          " - " +
+          picker.endDate.format("YYYY-MM-DD")
+      );
+      var startDate = picker.startDate.format("YYYY-MM-DD");
+      var endDate = picker.endDate.format("YYYY-MM-DD");
+      if (startDate != "" && endDate != "") {
+        console.log(startDate, endDate);
+        var endpoint =
+          "https://services.odata.org/v4/Northwind/Northwind.svc/Orders/";
+          let grid = document.querySelector(".products");
+        fetch(endpoint)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data.value);
+            let dataA = data.value;
 
-// The below code actually does the date filtering.
-minDateFilter = "";
-maxDateFilter = "";
+            searchDate(grid,data);
+          });
+        function searchDate(appendIn,dataA) {
+          var dataA = dataA.value;
+          console.log(dataA)
+          var filteredDates = _.filter(dataA, function (dataA) {
+            return (dataA.OrderDate > startDate && dataA.OrderDate < endDate);
+          });
+          let div = document.createElement("div");
+          div.className = "item justify-self-center";
+          console.log(filteredDates);
+         let name = dataA.ShipName;
+          console.log(name)
+          div.innerHTML=``;
+          div.innerHTML = `
+            <img src="https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg" class="bg-cover img">
+            <div class="text-center py-3 font-poppins">
+                <h3 class="text-lg title name"> Name: ${name}</h3>
+                <h3 class="text-lg"> CustomerID${dataA.CustomerID}</h3>
+                <a href="$" class="block"><span class="text-sm text-red-400"> Order ID: ${dataA.OrderID}</span></a>
+                <span class="block py-3"><span class="text-md"> OrderDate: ${dataA.OrderDate}</span></span>
+                <span class="block py-3"> <span class="text-md"> RequiredDate: ${dataA.ShippedDate}</span></span>
+                <button class="border-2 px-8 py-1 bg-yellow-400 border rounded-md">Bay Now</button>
+            </div>
+            `;
+        
+          appendIn.appendChild(div);
+        }
 
-$.fn.dataTableExt.afnFiltering.push(function (oSettings, aData, iDataIndex) {
-  if (typeof aData._date == "undefined") {
-    aData._date = new Date(aData[3]).getTime(); // Your date column is 3, hence aData[3].
-  }
-
-  if (minDateFilter && !isNaN(minDateFilter)) {
-    if (aData._date < minDateFilter) {
-      return false;
+        $('input[name="datefilter"]').on(
+          "cancel.daterangepicker",
+          function (ev, picker) {
+            $(this).val("");
+          }
+        );
+      }
     }
-  }
-
-  if (maxDateFilter && !isNaN(maxDateFilter)) {
-    if (aData._date > maxDateFilter) {
-      return false;
-    }
-  }
-
-  return true;
+  );
 });

@@ -15,6 +15,14 @@
 <script type="application/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="application/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="application/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   </head>
   <body>
     <div class="container mx-auto">
@@ -22,11 +30,7 @@
         Filter Products
       </h1>
       <div class="text-center py-4">
-      <label>Start date:</label>
-      <input id="startdate" class="date_range_filter" placeholder="date"  type="date"/>
-      <label>End date:</label>
-      <input id="enddate" class="date_range_filter" placeholder="date"  type="date"/>
-      <table id="staff"></table>
+        <ol class="breadcrumb">data from date : <input type="text" name="datefilter" value="" placeholder="date" /></ol>
     </div>
 
 
@@ -47,8 +51,8 @@
       </form>
     </div>
     <script src="main.js"></script>
-    <script src="advance.js"></script>
-    <script type='module' src='db.js'></script>
+    <script type='module' src="advance.js"></script>
+ 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </body>
 </html>
