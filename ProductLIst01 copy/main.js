@@ -17,7 +17,7 @@ let filterInput = document.getElementById("filterInput");
 filterInput.addEventListener("keyup", filterProducts);
 
 // callback function
-function filterProducts() {
+ export function filterProducts() {
   let filterValue = filterInput.value.toUpperCase();
  // console.log(filterValue);
   let item = grid.querySelectorAll('.item');

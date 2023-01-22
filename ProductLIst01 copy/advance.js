@@ -1,16 +1,4 @@
-// fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data.value);
-
-//      searchDate(data.value);
-
-//   });
-// import { value } from "./db.js";
-// let row = value;
-// console.log(row);
-
-// console.log(row);
+// import { filterProducts } from "./main";
 $(function () {
   $('input[name="datefilter"]').daterangepicker({
     showDropdowns: true,
@@ -51,8 +39,13 @@ $(function () {
             return dataA.OrderDate > startDate && dataA.OrderDate < endDate;
           });
           console.log(filteredDates);
-          let name = dataA.ShipName;
+          for( let i=0; i<filteredDates.length; i++){
+          let name = filteredDates[i].CustomerID;
           console.log(name);
+          filteredDates[i].display = "none";
+          
+          }
+     
         }
 
         $('input[name="datefilter"]').on(
