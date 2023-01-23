@@ -31,7 +31,7 @@ $(function () {
             let dataA = data.value;
 
             searchDate(data);
-            filterSearch();
+          
           });
         function searchDate(dataA) {
           var dataA = dataA.value;
@@ -45,27 +45,7 @@ $(function () {
             console.log(name);
           }
         }
-        let filterInput = document.getElementById("filter");
-        let grid = document.querySelector(".products");
-
-        // filterInput.addEventListener("click", filterSearch);
-
-        // callback function
-        function filterSearch() {
-          let filterValue = filterInput.value;
-          // console.log(filterValue);
-          let item = grid.querySelectorAll(".item");
-          //console.log(item)
-          for (let i = 0; i < item.length; i++) {
-            let span = item[i].querySelector(".name");
-            // console.log(span)
-            if (span.innerHTML.indexOf(filterValue) > -1) {
-              item[i].style.display = "initial";
-            } else {
-              item[i].style.display = "none";
-            }
-          }
-        }
+       
 
         $('input[name="datefilter"]').on(
           "cancel.daterangepicker",
