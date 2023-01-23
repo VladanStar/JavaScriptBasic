@@ -29,10 +29,10 @@
 <body id="login">
 	<div class="login-content">
 		<label>Username:<br>
-			<input type="text" id="user" placeholder="Nancy">
+			<input type="text" id="user" placeholder="ANATR">
 		</label><br>
 		<label>Password:<br>
-			<input type="password" id="pass" placeholder="Davolio">
+			<input type="password" id="pass" placeholder="ANATR">
 		</label>
 		<button id="loginBtn">Log in</button>
 		<p id="msg"></p>
@@ -40,20 +40,20 @@
 
 	<!-- Script -->
 	<script>
-		var employeesUrl = "http://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json";
-		var employees = getServiceData(employeesUrl).value;
+		var customersUrl = "https://services.odata.org/v4/Northwind/Northwind.svc/Customers";
+		var customers = getServiceData(customersUrl).value;
 
 		document.getElementById("loginBtn").addEventListener("click", function() {
 			var user = document.getElementById("user").value;
 			var pass = document.getElementById("pass").value;
-			login(user, pass, employees);
+			login(user, pass, customers);
 		});
 
-		function login(user, pass, employes) {
+		function login(user, pass, customers) {
 
 			var userLogin = false;
-			for (var i in employes) {
-				if (employes[i].FirstName === user && employees[i].LastName == pass) {
+			for (var i in customers) {
+				if (customers[i].CustomerID === user && customers[i].CustomerID == pass) {
 					userLogin = true;
 					break;
 				}
