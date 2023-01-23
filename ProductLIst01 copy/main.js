@@ -2,6 +2,7 @@
 if (sessionStorage.getItem("userLogin") != "true") {
 	window.location.href = "login.html";
 }
+document.getElementsByClassName('table"')[0].style.display = "none";
 let grid = document.querySelector(".products");
 fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
   .then((res) => res.json())
