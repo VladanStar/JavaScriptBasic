@@ -40,7 +40,7 @@ function addElement(appendIn, value) {
   div.className = "item justify-self-center";
 
   //   let { ProductID, ProductName, CategoryID, UnitPrice } = value;
- // console.log(value);
+ console.log(value);
  let name = value.ShipName;
   div.innerHTML = `
     <img src="https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg" class="bg-cover img">
