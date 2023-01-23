@@ -6,39 +6,65 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
 
-  
     <title>ListProduct Northwind</title>
-    
+
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script type="application/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="application/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="application/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script
+      type="application/javascript"
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+      defer
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   </head>
   <body>
     <div class="container mx-auto">
       <h1 class="font-poppins text-center text-3xl font-bold py-20">
         Filter Products
       </h1>
-      <div class="text-center py-4">
-        <ol class="breadcrumb" id="filter">data from date : <input type="text" name="datefilter" value="" placeholder="date" /></ol>
-    </div>
-
 
       <form action="#" class="text-center py-4">
         <input
@@ -51,30 +77,38 @@
           class="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-12 gap-20"
         >
           <!-- <div class="item justify-self-center "> -->
-          
-          </div>
-    
+        </div>
       </form>
     </div>
-   
 
-  
-    <table class="table">
-      <thead>
+    <div>
+      <h1 class="font-poppins text-center text-3xl font-bold py-20">
+        Filter Data
+      </h1>
+      <div class="text-center py-4">
+        <ol class="breadcrumb" id="filter">
+          data from date :
+          <input type="text" name="datefilter" value="" placeholder="date" />
+        </ol>
+      </div>
+
+      <table class="table">
+        <thead>
           <tr>
-              <th>Bill</th>
-              <th>Action</th>
+            <th>OrderID</th>
+            <th>CustomerID</th>
+            <th>OrderDate</th>
+            <th>Freight</th>
           </tr>
-      </thead>
-      <tbody id="table_body">
-
-      </tbody>
+        </thead>
+        <tbody id="table_body"></tbody>
       </table>
-  
-   <!-- // <script type="module" src="main.js"></script> -->
-    <!-- <script type='module' src="advance.js"></script> -->
-    <script type='module' src="orders.js"></script>
- 
+    </div>
+
+    <!-- // <script type="module" src="main.js"></script> -->
+    <script type="module" src="advance.js"></script>
+    <script type="module" src="orders.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </body>
 </html>
