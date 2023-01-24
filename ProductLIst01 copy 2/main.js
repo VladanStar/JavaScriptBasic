@@ -55,8 +55,8 @@ function addElement(appendIn, value) {
  console.log(value);
  let name = value.ProductName;
   div.innerHTML = `
-    <img src="https://www.slikomania.rs/fotky6509/fotos/CWFFL036.jpg" class="bg-cover img">
-    <div class="text-center py-3 font-poppins">
+    <img src="https://i.pinimg.com/200x/c9/70/08/c97008bfe5d6b7543728d1a777160507.jpg" class="bg-cover img"alt="img">
+    <div class="text-center py-3 font-poppins card">
         <h3 class="text-lg title name"> Name: ${name}</h3>
         <h3 class="text-lg"> Product ID ${value.ProductID}</h3>
         <a href="$" class="block"><span class="text-sm text-red-400"> Discontinued: ${value.Discontinued}</span></a>

@@ -20,6 +20,9 @@ body {
 }
 .item {
 	background-color: aqua;
+	border-radius: 20px;
+	border: 2px solid darkblue;
+	width: 280px;
 
 }
 :root {
