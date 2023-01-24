@@ -12,17 +12,18 @@
     />
 
     <title>ListProduct Northwind</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   
+    <script type="application/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="application/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
-    />
+  
     <link
       rel="stylesheet"
       type="text/css"
@@ -32,10 +33,7 @@
       type="application/javascript"
       src="https://code.jquery.com/jquery-3.3.1.min.js"
     ></script>
-    <script
-      type="application/javascript"
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-    ></script>
+   
     <script
       type="application/javascript"
       src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
@@ -74,13 +72,8 @@
         Filter Products
       </h1>
 
-      <form action="#" class="text-center py-4">
-        <input
-          type="text"
-          class="placeholder-gray-800 focus:outline-none rounded-md font-poppins py-2 px-3 bg-gray-200 text-gray-800 w-2/4"
-          id="filterInput"
-          placeholder="Filter"
-        />
+    
+    </table>
         <div
           class="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-12 gap-20"
         >
@@ -94,6 +87,7 @@
       <h1 class="font-poppins text-center text-3xl font-bold py-20">
         Filter Data
       </h1>
+
       <div class="text-center py-4">
         <ol class="breadcrumb" id="filter">
           data from date :
@@ -101,7 +95,7 @@
         </ol>
       </div>
 
-      <table class="table">
+      <table class="table" id="example">
         <thead>
           <tr>
             <th>OrderID</th>

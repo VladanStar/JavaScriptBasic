@@ -40,10 +40,13 @@ $(function () {
             return dataA.OrderDate > startDate && dataA.OrderDate < endDate;
           });
           console.log(filteredDates);
+     
           for (let i = 0; i < filteredDates.length; i++) {
             let name = filteredDates[i].CustomerID;
             console.log(name);
+          
           }
+
         }
        
 
@@ -57,3 +60,7 @@ $(function () {
     }
   );
 });
+
+
+
+
