@@ -13,12 +13,11 @@ fetch(
   });
 function addTable(value) {
   let tableData = "";
-
   tableData += `
         <tr class= "tada">
             <td> ${value.OrderID}</td>
             <td>${value.CustomerID}</td>
-            <td class="odate">${value.OrderDate.slice(0, 10)}</td>
+            <td class= "odatle" >${value.OrderDate.slice(0, 10)}</td>
             <td>${value.Freight}</td>
         </tr > `;
 
