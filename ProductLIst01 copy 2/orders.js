@@ -5,7 +5,7 @@
 
 
 
-function order(){
+
 document.getElementsByClassName("container")[0].style.display = "none";
 // import { userE } from "./login.js";
 fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
@@ -43,7 +43,7 @@ $('input[name="datefilter"]').on(
     if (startDate != "" && endDate != "") {
       console.log(startDate, endDate);
       var endpoint =
-        "https://services.odata.org/v4/Northwind/Northwind.svc/Orders/";
+        "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?$format=json";
 
       fetch(endpoint)
         .then((res) => res.json())
@@ -98,4 +98,4 @@ $('input[name="datefilter"]').on(
     }
   }
 );
-}
+

@@ -1,5 +1,5 @@
 let customersUrl =
-  "https://services.odata.org/v4/Northwind/Northwind.svc/Customers";
+  "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json";
 let customers = getServiceData(customersUrl).value;
 
 
