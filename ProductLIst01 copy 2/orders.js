@@ -1,4 +1,13 @@
- document.getElementsByClassName("container")[0].style.display = "none";
+
+
+// let  btnE2 = document.querySelector('.btn2');
+// btnE2.addEventListener('click', 'order');
+
+
+
+function order(){
+document.getElementsByClassName("container")[0].style.display = "none";
+// import { userE } from "./login.js";
 fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
   .then((response) => response.json())
   .then((data) => {
@@ -59,6 +68,7 @@ $('input[name="datefilter"]').on(
       }
       let filterInput = document.getElementById("filter");
       let grid = document.querySelector(".products");
+      // document.getElementById("bod").innerHTML = userE;
 
       // filterInput.addEventListener("click", filterSearch);
 
@@ -88,3 +98,4 @@ $('input[name="datefilter"]').on(
     }
   }
 );
+}

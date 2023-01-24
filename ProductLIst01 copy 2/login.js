@@ -2,6 +2,7 @@ let customersUrl =
   "https://services.odata.org/v4/Northwind/Northwind.svc/Customers";
 let customers = getServiceData(customersUrl).value;
 
+
 document.getElementById("loginBtn").addEventListener("click", function () {
   let user = document.getElementById("user").value;
   let pass = document.getElementById("pass").value;
@@ -44,3 +45,5 @@ function getServiceData(url, username, password) {
     return err;
   }
 }
+export let userE = document.getElementById("user");
+
