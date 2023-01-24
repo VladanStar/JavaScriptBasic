@@ -61,16 +61,12 @@ $('input[name="datefilter"]').on(
           return dataA.OrderDate > startDate && dataA.OrderDate < endDate;
         });
         console.log(filteredDates);
-        for (let i = 0; i < filteredDates.length; i++) {
-          let name = filteredDates[i].CustomerID;
-          console.log(name);
-        }
-      }
-      // let filterInput = document.getElementById("filter");
-      // let grid = document.querySelector(".products");
+       
+  
+
       
 
-  
+      }
 
       $('input[name="datefilter"]').on(
         "cancel.daterangepicker",
