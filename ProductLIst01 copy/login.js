@@ -1,16 +1,16 @@
-var customersUrl =
+let customersUrl =
   "https://services.odata.org/v4/Northwind/Northwind.svc/Customers";
-var customers = getServiceData(customersUrl).value;
+let customers = getServiceData(customersUrl).value;
 
 document.getElementById("loginBtn").addEventListener("click", function () {
-  var user = document.getElementById("user").value;
-  var pass = document.getElementById("pass").value;
+  let user = document.getElementById("user").value;
+  let pass = document.getElementById("pass").value;
   login(user, pass, customers);
 });
 
 function login(user, pass, customers) {
-  var userLogin = false;
-  for (var i in customers) {
+  let userLogin = false;
+  for (let i in customers) {
     if (customers[i].CustomerID === user && customers[i].CustomerID == pass) {
       userLogin = true;
       break;
@@ -26,8 +26,8 @@ function login(user, pass, customers) {
 
 function getServiceData(url, username, password) {
   try {
-    var result;
-    var xmlhttp = new XMLHttpRequest();
+    let result;
+    let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState == 4) {
         if (xmlhttp.status == 200) {

@@ -1,4 +1,4 @@
-document.getElementsByClassName("container")[0].style.display = "none";
+ document.getElementsByClassName("container")[0].style.display = "none";
 fetch("https://services.odata.org/v4/Northwind/Northwind.svc/Orders/")
   .then((response) => response.json())
   .then((data) => {
