@@ -1,4 +1,5 @@
-console.log("Vladan");
-document.write('pisanje')
-let recenica = document.querySelector('body');
-recenica.innerHTML = '<p> Ovo je recenica</p>'
+
+fetch('./db.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
